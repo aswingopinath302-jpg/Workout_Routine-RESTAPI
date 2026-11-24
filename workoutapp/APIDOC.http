@@ -1,0 +1,52 @@
+### Register a new user
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "aswin2",
+    "email": "aswin@gmail.com",
+    "password": "321"
+}
+
+### Login and get auth token
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username": "aswin2",
+    "password": "321"
+}
+
+
+### Create a new workout session
+POST http://127.0.0.1:8000/workouts/
+Content-Type: application/json
+Authorization: Token f297881350e0bce4ba963b8b07604caf298cbc48
+
+{
+    "category": "PULL",
+    "notes": "lat pull-down 3*10 reps,dumbel curls 3*10 reps"
+}
+
+### Get all my workout sessions
+GET http://127.0.0.1:8000/workouts/
+Authorization: Token f297881350e0bce4ba963b8b07604caf298cbc48
+
+
+### Get a single workout session
+GET http://127.0.0.1:8000/workouts/1/
+Authorization: Token f297881350e0bce4ba963b8b07604caf298cbc48
+
+### Update a workout session
+PUT http://127.0.0.1:8000/workouts/1/
+Content-Type: application/json
+Authorization: Token f297881350e0bce4ba963b8b07604caf298cbc48
+
+{
+    "category": "PULL",
+    "notes": "Switched to back and biceps today"
+}
+
+### Delete a workout session
+DELETE http://127.0.0.1:8000/workouts/1/
+Authorization: Token f297881350e0bce4ba963b8b07604caf298cbc48
